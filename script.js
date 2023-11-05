@@ -5,7 +5,9 @@ var camera   = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerH
     mat      = new THREE.ParticleBasicMaterial({ color: 0x22aaff, size: 3 }),
     radius   = 500;
 
-// Setup
+
+    var globeRotation = 0;  
+
 camera.position.z = 1500;
 renderer.setSize(window.innerWidth, window.innerHeight);
 
@@ -54,3 +56,9 @@ requestAnimationFrame(function update() {
     
   renderer.render(scene, camera);
 }); 
+
+renderer.domElement.addEventListener('click', function () {
+    globeRotation += Math.PI / 180;
+    particles.rotation.y = globeRotation;
+    
+  });  
