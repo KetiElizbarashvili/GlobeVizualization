@@ -58,7 +58,7 @@ requestAnimationFrame(function update() {
 }); 
 
 renderer.domElement.addEventListener('click', function () {
-    globeRotation += Math.PI / 180;
+    globeRotation += Math.PI / 360;
     particles.rotation.y = globeRotation;
     
   });  
